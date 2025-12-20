@@ -1,259 +1,245 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dr. Kulandaisamy Arulsamy</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dr. Kulandaisamy Arulsamy</title>
+  <meta name="description" content="Academic CV homepage of Dr. Kulandaisamy Arulsamy." />
 
-<style>
-:root{
-  --bg:#ffffff;
-  --text:#1f2937;
-  --muted:#6b7280;
-  --border:#e5e7eb;
-  --accent:#2563eb;
-  --accent-soft:#eff6ff;
-  --max:960px;
-}
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --link:#1d4ed8;        /* calm professional blue */
+      --linkHover:#1e40af;
+      --max: 1080px;
+    }
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.65;
-}
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height:1.65;
+    }
+    a{ color:var(--link); text-decoration:none; }
+    a:hover{ color:var(--linkHover); text-decoration:underline; }
 
-a{color:var(--accent); text-decoration:none}
-a:hover{text-decoration:underline}
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:32px 18px 70px;
+    }
 
-.container{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:40px 20px 70px;
-}
+    /* Top profile block */
+    .top{
+      display:grid;
+      grid-template-columns: 96px 1fr;
+      gap:16px;
+      align-items:center;
+      padding-bottom:18px;
+      border-bottom:1px solid var(--border);
+    }
+    .avatar{
+      width:96px; height:96px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      object-fit:cover;
+      background:#f3f4f6;
+    }
+    h1{
+      margin:0;
+      font-size:32px;
+      font-weight:800;
+      letter-spacing:-0.02em;
+    }
+    .title{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-size:15px;
+    }
+    .meta{
+      margin:10px 0 0;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 14px;
+      color:var(--muted);
+      font-size:14px;
+    }
 
-/* Header */
-header{
-  border-bottom:1px solid var(--border);
-  padding-bottom:24px;
-}
+    /* Layout with left nav + content */
+    .grid{
+      display:grid;
+      grid-template-columns: 240px 1fr;
+      gap:26px;
+      margin-top:18px;
+    }
 
-h1{
-  margin:0;
-  font-size:34px;
-  font-weight:800;
-}
+    nav{
+      position:sticky;
+      top:18px;
+      align-self:start;
+      border-right:1px solid var(--border);
+      padding-right:16px;
+    }
+    .navtitle{
+      font-size:12px;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin:10px 0 8px;
+    }
+    .nav a{
+      display:block;
+      padding:8px 0;
+      font-weight:600;
+      color:#374151;
+    }
+    .nav a:hover{ color:var(--linkHover); text-decoration:none; }
 
-.subtitle{
-  margin-top:6px;
-  color:var(--muted);
-  font-size:16px;
-}
+    main{ min-width:0; } /* prevent overflow */
 
-/* Links */
-.links{
-  margin-top:14px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-}
+    section{
+      padding:18px 0;
+      border-bottom:1px solid var(--border);
+    }
+    section:last-child{ border-bottom:none; }
 
-.link-chip{
-  padding:6px 12px;
-  border-radius:999px;
-  background:var(--accent-soft);
-  border:1px solid var(--border);
-  font-size:14px;
-}
+    h2{
+      margin:0 0 10px;
+      font-size:18px;
+      font-weight:800;
+    }
+    p{ margin:0 0 10px; }
+    ul{ margin:8px 0 0 18px; }
+    li{ margin:6px 0; }
 
-/* Tabs */
-.tabs{
-  display:flex;
-  gap:22px;
-  margin-top:28px;
-  border-bottom:2px solid var(--border);
-}
+    .small{ color:var(--muted); font-size:14px; }
 
-.tab{
-  padding:10px 2px;
-  font-weight:600;
-  color:var(--muted);
-  cursor:pointer;
-  border-bottom:3px solid transparent;
-}
-
-.tab.active{
-  color:var(--accent);
-  border-color:var(--accent);
-}
-
-/* Content */
-section{
-  display:none;
-  padding-top:28px;
-}
-
-section.active{
-  display:block;
-}
-
-h2{
-  margin-top:0;
-  font-size:22px;
-}
-
-.card{
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:20px;
-  margin-bottom:18px;
-  background:#ffffff;
-}
-
-.two{
-  display:grid;
-  gap:20px;
-}
-
-@media(min-width:820px){
-  .two{grid-template-columns:1fr 1fr}
-}
-
-footer{
-  margin-top:48px;
-  text-align:center;
-  font-size:13px;
-  color:var(--muted);
-}
-</style>
+    /* Mobile */
+    @media (max-width: 860px){
+      .top{ grid-template-columns: 72px 1fr; }
+      .avatar{ width:72px; height:72px; border-radius:12px; }
+      .grid{ grid-template-columns: 1fr; }
+      nav{
+        position:static;
+        border-right:none;
+        padding-right:0;
+        border-bottom:1px solid var(--border);
+        padding-bottom:10px;
+      }
+      .nav{ display:flex; flex-wrap:wrap; gap:10px 14px; }
+      .nav a{ padding:6px 0; }
+    }
+  </style>
 </head>
 
 <body>
-<div class="container">
+  <div class="wrap">
 
-<header>
-  <h1>Dr. Kulandaisamy Arulsamy</h1>
-  <div class="subtitle">
-    Postdoctoral Research Fellow · Boston Children’s Hospital / Harvard Medical School · Boston, MA
-  </div>
+    <header class="top">
+      <!-- Put your photo at: assets/profile.jpg -->
+      <img class="avatar" src="assets/profile.jpg" alt="Profile photo"
+           onerror="this.style.display='none';" />
 
-  <div class="links">
-    <span class="link-chip"><a href="mailto:YOUR_EMAIL@domain.com">Email</a></span>
-    <span class="link-chip"><a href="https://github.com/kulansam" target="_blank">GitHub</a></span>
-    <span class="link-chip"><a href="https://scholar.google.com/citations?user=yfatXHcAAAAJ&hl=en" target="_blank">Google Scholar</a></span>
-    <span class="link-chip"><a href="https://doi.org/10.5281/zenodo.14726426" target="_blank">Zenodo</a></span>
-    <span class="link-chip"><a href="https://kaifuchenlab.github.io/" target="_blank">Lab</a></span>
-  </div>
+      <div>
+        <h1>Dr. Kulandaisamy Arulsamy</h1>
+        <div class="title">Postdoctoral Research Fellow, Boston Children’s Hospital / Harvard Medical School</div>
 
-  <div class="tabs">
-    <div class="tab active" onclick="showTab('about',this)">About</div>
-    <div class="tab" onclick="showTab('research',this)">Research</div>
-    <div class="tab" onclick="showTab('publications',this)">Publications</div>
-    <div class="tab" onclick="showTab('software',this)">Software</div>
-    <div class="tab" onclick="showTab('contact',this)">Contact</div>
-  </div>
-</header>
+        <div class="meta">
+          <span><a href="mailto:YOUR_EMAIL@domain.com">YOUR_EMAIL@domain.com</a></span>
+          <span><a target="_blank" rel="noopener" href="https://github.com/kulansam">github.com/kulansam</a></span>
+          <span><a target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=yfatXHcAAAAJ&hl=en">Google Scholar</a></span>
+          <span><a target="_blank" rel="noopener" href="https://doi.org/10.5281/zenodo.14726426">Zenodo DOI</a></span>
+        </div>
 
-<section id="about" class="active">
-  <h2>About</h2>
-  <div class="card">
-    <p>
-      I am a postdoctoral research fellow at <strong>Boston Children’s Hospital / Harvard Medical School</strong>.
-      My research integrates <strong>vascular biology</strong> with <strong>computational genomics</strong>,
-      focusing on endothelial dysfunction and functional interpretation of transcriptomic data.
-    </p>
-    <p>
-      I develop <strong>SCIG / SCIGFun</strong>, an AI-driven framework for identifying
-      cell-identity genes and improving pathway enrichment across tissues and diseases.
-    </p>
-  </div>
-</section>
+        <div class="small" style="margin-top:8px;">
+          Vascular biology · Endothelial dysfunction · Single-cell genomics · SCIG/SCIGFun
+        </div>
+      </div>
+    </header>
 
-<section id="research">
-  <h2>Research Interests</h2>
-  <div class="card">
-    <ul>
-      <li>Endothelial biology, angiogenesis/lymphangiogenesis, atherosclerosis</li>
-      <li>Single-cell and multi-omics analysis (scRNA-seq, RNA velocity)</li>
-      <li>AI-driven gene-set methods and pathway enrichment</li>
-      <li>Computational tools for translational biology</li>
-    </ul>
-  </div>
-</section>
+    <div class="grid">
+      <nav>
+        <div class="navtitle">Navigation</div>
+        <div class="nav">
+          <a href="#home">Home</a>
+          <a href="#contrib">Contribution to Science</a>
+          <a href="#pubs">Publications</a>
+          <a href="#software">Software & Tools</a>
+          <a href="#awards">Honors & Awards</a>
+          <a href="#talks">Presentations</a>
+        </div>
+      </nav>
 
-<section id="publications">
-  <h2>Publications</h2>
-  <div class="card">
-    <p>
-      <strong>Arulsamy K</strong>, et al. <em>SCIGFun: AI-driven cell-identity gene sets for improved pathway enrichment.</em>
-      (in preparation)
-    </p>
-    <p class="muted">
-      Full list available on
-      <a href="https://scholar.google.com/citations?user=yfatXHcAAAAJ&hl=en" target="_blank">Google Scholar</a>.
-    </p>
-  </div>
-</section>
+      <main>
+        <section id="home">
+          <h2>About Me</h2>
+          <p>
+            I am a postdoctoral research fellow at <strong>Boston Children’s Hospital / Harvard Medical School</strong>.
+            My research integrates <strong>vascular biology</strong> with <strong>computational genomics</strong>,
+            focusing on endothelial dysfunction and functional interpretation of transcriptomic data.
+          </p>
+          <p>
+            I develop <strong>SCIG / SCIGFun</strong>, an AI-driven framework to identify <em>cell-identity genes (CIGs)</em>
+            and improve pathway enrichment across tissues and disease contexts.
+          </p>
+        </section>
 
-<section id="software">
-  <h2>Software</h2>
-  <div class="two">
-    <div class="card">
-      <strong>SCIG / SCIGFun</strong>
-      <p>AI-driven identification of cell-identity genes and improved pathway enrichment.</p>
-      <ul>
-        <li><a href="https://github.com/kulansam" target="_blank">GitHub</a></li>
-        <li><a href="https://doi.org/10.5281/zenodo.14726426" target="_blank">Zenodo DOI</a></li>
-      </ul>
+        <section id="contrib">
+          <h2>Contribution to Science</h2>
+          <ul>
+            <li><strong>AI-driven gene-set methods:</strong> SCIG identifies cell-identity gene sets to improve functional enrichment.</li>
+            <li><strong>Single-cell analysis pipelines:</strong> robust workflows for cell-type profiling, trajectories, and pathway interpretation.</li>
+            <li><strong>Web resources:</strong> SCIGFun to make CIG-based enrichment accessible to the community.</li>
+          </ul>
+        </section>
+
+        <section id="pubs">
+          <h2>Publications</h2>
+          <p class="small">For the complete list, visit your <a target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=yfatXHcAAAAJ&hl=en">Google Scholar</a>.</p>
+          <ul>
+            <li><strong>Arulsamy K</strong>, et al. <em>SCIGFun: AI-driven cell-identity gene sets for improved pathway enrichment.</em> (in preparation)</li>
+            <li>(Add 5–10 key papers here; I can format them cleanly with DOI/PMID links.)</li>
+          </ul>
+        </section>
+
+        <section id="software">
+          <h2>Software & Tools</h2>
+          <ul>
+            <li><strong>SCIGFun</strong> — web tool for CIG-based enrichment and visualization. (add your repo link)</li>
+            <li><strong>SCIG</strong> — core pipeline / scripts. (add your repo link)</li>
+          </ul>
+        </section>
+
+        <section id="awards">
+          <h2>Honors & Awards</h2>
+          <ul>
+            <li>(Add fellowships/awards here)</li>
+          </ul>
+        </section>
+
+        <section id="talks">
+          <h2>Presentations</h2>
+          <ul>
+            <li>(Add invited talks, posters, conferences here)</li>
+          </ul>
+        </section>
+
+        <div class="small" style="margin-top:18px;">
+          © <span id="y"></span> Kulandaisamy Arulsamy · Hosted on GitHub Pages
+        </div>
+      </main>
     </div>
 
-    <div class="card">
-      <strong>Resources</strong>
-      <ul>
-        <li><a href="https://kaifuchenlab.github.io/" target="_blank">Kaifu Chen Lab</a></li>
-        <li><a href="https://scholar.google.com/citations?user=yfatXHcAAAAJ&hl=en" target="_blank">Google Scholar</a></li>
-      </ul>
-    </div>
   </div>
-</section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="two">
-    <div class="card">
-      <strong>Principal Investigator</strong>
-      <p><strong>Dr. Kaifu Chen</strong><br>
-      Associate Professor, Department of Cardiology<br>
-      Boston Children’s Hospital / Harvard Medical School</p>
-      <p><a href="mailto:kaifu.chen@childrens.harvard.edu">kaifu.chen@childrens.harvard.edu</a></p>
-    </div>
-
-    <div class="card">
-      <strong>Dr. Kulandaisamy Arulsamy</strong>
-      <p>Postdoctoral Research Fellow<br>
-      Boston Children’s Hospital / Harvard Medical School</p>
-      <p><a href="mailto:YOUR_EMAIL@domain.com">YOUR_EMAIL@domain.com</a></p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  © <span id="y"></span> Kulandaisamy Arulsamy · GitHub Pages
-</footer>
-
-</div>
-
-<script>
-function showTab(id, el){
-  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  el.classList.add('active');
-}
-document.getElementById('y').textContent = new Date().getFullYear();
-</script>
-
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
