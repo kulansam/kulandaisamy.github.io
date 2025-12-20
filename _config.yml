@@ -4,11 +4,13 @@ url: "https://kulansam.github.io"
 baseurl: ""
 
 remote_theme: "mmistakes/minimal-mistakes"
+
 plugins:
   - jekyll-include-cache
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+
 
 
 name: "Dr. Kulandaisamy Arulsamy"
