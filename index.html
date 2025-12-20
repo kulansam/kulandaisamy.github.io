@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Kulandaisamy Arulsamy</title>
+
+<style>
+:root{
+  --navy:#0f172a;
+  --blue:#1e40af;
+  --light:#f8fafc;
+  --muted:#64748b;
+  --border:#e2e8f0;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial;
+  background:var(--light);
+  color:#0f172a;
+  line-height:1.6;
+}
+
+a{color:var(--blue); text-decoration:none}
+a:hover{text-decoration:underline}
+
+.container{
+  max-width:960px;
+  margin:0 auto;
+  padding:36px 20px 60px;
+}
+
+header{
+  border-bottom:1px solid var(--border);
+  padding-bottom:18px;
+}
+
+h1{
+  margin:0;
+  font-size:34px;
+  font-weight:800;
+}
+
+.subtitle{
+  margin-top:6px;
+  color:var(--muted);
+  font-size:16px;
+}
+
+.links{
+  margin-top:12px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.badge{
+  padding:6px 12px;
+  border-radius:999px;
+  background:#eef2ff;
+  border:1px solid var(--border);
+  font-size:14px;
+}
+
+/* Tabs */
+.tabs{
+  display:flex;
+  gap:20px;
+  border-bottom:2px solid var(--border);
+  margin-top:28px;
+}
+
+.tab{
+  padding:10px 2px;
+  font-weight:600;
+  cursor:pointer;
+  color:var(--muted);
+  border-bottom:3px solid transparent;
+}
+
+.tab.active{
+  color:var(--navy);
+  border-color:var(--blue);
+}
+
+section{
+  display:none;
+  padding-top:24px;
+}
+
+section.active{
+  display:block;
+}
+
+h2{
+  margin-top:0;
+  font-size:22px;
+}
+
+.card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px;
+  margin-bottom:16px;
+}
+
+.two{
+  display:grid;
+  gap:18px;
+}
+
+@media (min-width:800px){
+  .two{grid-template-columns:1fr 1fr}
+}
+
+footer{
+  margin-top:40px;
+  font-size:13px;
+  color:var(--muted);
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+  <h1>Dr. Kulandaisamy Arulsamy</h1>
+  <div class="subtitle">
+    Postdoctoral Research Fellow · Boston Children’s Hospital / Harvard Medical School · Boston, MA
+  </div>
+
+  <div class="links">
+    <span class="badge"><a href="mailto:YOUR_EMAIL@domain.com">Email</a></span>
+    <span class="badge"><a href="https://github.com/kulansam" target="_blank">GitHub</a></span>
+    <span class="badge"><a href="https://scholar.google.com/citations?user=yfatXHcAAAAJ&hl=en" target="_blank">Google Scholar</a></span>
+    <span class="badge"><a href="https://doi.org/10.5281/zenodo.14726426" target="_blank">Zenodo</a></span>
+    <span class="badge"><a href="https://kaifuchenlab.github.io/" target="_blank">Lab</a></span>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('about')">About</div>
+    <div class="tab" onclick="showTab('research')">Research</div>
+    <div class="tab" onclick="showTab('publications')">Publications</div>
+    <div class="tab" onclick="showTab('software')">Software</div>
+    <div class="tab" onclick="showTab('contact')">Contact</div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about" class="active">
+  <h2>About</h2>
+  <div class="card">
+    <p>
+      I am a postdoctoral research fellow at <strong>Boston Children’s Hospital / Harvard Medical School</strong>.
+      My research integrates <strong>vascular biology</strong> with <strong>computational genomics</strong>,
+      focusing on endothelial dysfunction and functional interpretation of transcriptomic data.
+    </p>
+    <p>
+      I am developing <strong>SCIG / SCIGFun</strong>, an AI-driven framework to identify
+      <em>cell-identity genes (CIGs)</em> and improve pathway enrichment across tissues and disease contexts.
+    </p>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <h2>Research Interests</h2>
+  <div class="card">
+    <ul>
+      <li>Endothelial biology, angiogenesis/lymphangiogenesis, atherosclerosis</li>
+      <li>Single-cell & multi-omics analysis (scRNA-seq, RNA velocity, trajectories)</li>
+      <li>AI-driven gene-set methods and pathway enrichment</li>
+      <li>Translational computational tools</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <h2>Publications</h2>
+  <div class="card">
+    <p><strong>Selected</strong></p>
+    <p>• <strong>Arulsamy K</strong>, et al. <em>SCIGFun: AI-driven cell-identity gene sets for improved pathway enrichment.</em> (in preparation)</p>
+    <p class="muted">
+      Full list: <a href="https://scholar.google.com/citations?user=yfatXHcAAAAJ&hl=en" target="_blank">Google Scholar</a>
+    </p>
+  </div>
+</section>
+
+<!-- SOFTWARE -->
+<section id="software">
+  <h2>Software</h2>
+  <div class="two">
+    <div class="card">
+      <strong>SCIG / SCIGFun</strong>
+      <p>AI-driven identification of cell-identity genes and improved pathway enrichment.</p>
+      <ul>
+        <li><a href="https://github.com/kulansam" target="_blank">GitHub</a></li>
+        <li><a href="https://doi.org/10.5281/zenodo.14726426" target="_blank">Zenodo DOI</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <strong>Resources</strong>
+      <ul>
+        <li><a href="https://kaifuchenlab.github.io/" target="_blank">Kaifu Chen Lab</a></li>
+        <li><a href="https://scholar.google.com/citations?user=yfatXHcAAAAJ&hl=en" target="_blank">Google Scholar</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="two">
+    <div class="card">
+      <strong>Principal Investigator</strong>
+      <p><strong>Dr. Kaifu Chen</strong><br>
+      Associate Professor, Department of Cardiology<br>
+      Boston Children’s Hospital / Harvard Medical School</p>
+      <p><a href="mailto:kaifu.chen@childrens.harvard.edu">kaifu.chen@childrens.harvard.edu</a></p>
+    </div>
+
+    <div class="card">
+      <strong>Developer</strong>
+      <p><strong>Dr. Kulandaisamy Arulsamy</strong><br>
+      Postdoctoral Research Fellow<br>
+      Boston Children’s Hospital / Harvard Medical School</p>
+      <p><a href="mailto:YOUR_EMAIL@domain.com">YOUR_EMAIL@domain.com</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="y"></span> Kulandaisamy Arulsamy · Hosted on GitHub Pages
+</footer>
+
+</div>
+
+<script>
+function showTab(id){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById(id).classList.add('active');
+}
+document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
