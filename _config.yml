@@ -3,13 +3,13 @@ description: "Postdoctoral Research Fellow | Boston Children’s Hospital / Harv
 url: "https://kulansam.github.io"
 baseurl: ""
 
-theme: minimal-mistakes-jekyll
-minimal_mistakes_skin: "default"
-
+remote_theme: "mmistakes/minimal-mistakes"
 plugins:
+  - jekyll-include-cache
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+
 
 name: "Dr. Kulandaisamy Arulsamy"
 email: "YOUR_EMAIL@domain.com"
