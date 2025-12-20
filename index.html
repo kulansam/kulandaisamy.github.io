@@ -8,12 +8,17 @@
 
   <style>
     :root{
-      --bg:#ffffff;
+      --bg:#f8fafc;              /* soft background */
+      --panel:#ffffff;           /* white cards */
+      --panelSoft:#f1f5f9;       /* sidebar panel */
       --text:#111827;
       --muted:#6b7280;
       --border:#e5e7eb;
-      --link:#1d4ed8;        /* calm professional blue */
+
+      --link:#1d4ed8;            /* calm professional blue */
       --linkHover:#1e40af;
+      --accentSoft:#eff6ff;
+
       --max: 1080px;
     }
 
@@ -35,35 +40,51 @@
       padding:32px 18px 70px;
     }
 
-    /* Top profile block */
+    /* Top profile block (bigger + cleaner) */
     .top{
       display:grid;
-      grid-template-columns: 96px 1fr;
-      gap:16px;
+      grid-template-columns: 110px 1fr;
+      gap:20px;
       align-items:center;
-      padding-bottom:18px;
-      border-bottom:1px solid var(--border);
+      padding:28px 22px 24px;
+      border:1px solid var(--border);
+      border-radius:16px;
+      background:var(--panel);
     }
+
     .avatar{
-      width:96px; height:96px;
-      border-radius:14px;
+      width:110px; height:110px;
+      border-radius:16px;
       border:1px solid var(--border);
       object-fit:cover;
       background:#f3f4f6;
     }
+
     h1{
       margin:0;
-      font-size:32px;
+      font-size:36px;
       font-weight:800;
       letter-spacing:-0.02em;
     }
-    .title{
-      margin:6px 0 0;
-      color:var(--muted);
-      font-size:15px;
+
+    /* subtle accent line under name */
+    .accent-line{
+      margin-top:10px;
+      width:64px;
+      height:3px;
+      background:var(--link);
+      border-radius:999px;
+      opacity:.95;
     }
-    .meta{
+
+    .title{
       margin:10px 0 0;
+      color:var(--muted);
+      font-size:15.5px;
+    }
+
+    .meta{
+      margin:12px 0 0;
       display:flex;
       flex-wrap:wrap;
       gap:10px 14px;
@@ -71,43 +92,63 @@
       font-size:14px;
     }
 
+    .small{ color:var(--muted); font-size:14px; }
+
     /* Layout with left nav + content */
     .grid{
       display:grid;
-      grid-template-columns: 240px 1fr;
-      gap:26px;
+      grid-template-columns: 260px 1fr;
+      gap:22px;
       margin-top:18px;
+      align-items:start;
     }
 
     nav{
       position:sticky;
       top:18px;
       align-self:start;
-      border-right:1px solid var(--border);
-      padding-right:16px;
+      padding:16px;
+      background:var(--panelSoft);
+      border-radius:14px;
+      border:1px solid var(--border);
     }
+
     .navtitle{
       font-size:12px;
       letter-spacing:0.08em;
       text-transform:uppercase;
       color:var(--muted);
-      margin:10px 0 8px;
+      margin:6px 0 10px;
     }
+
     .nav a{
       display:block;
-      padding:8px 0;
+      padding:10px 14px;
+      margin-bottom:8px;
       font-weight:600;
       color:#374151;
+      border-radius:10px;
+      background:var(--panel);
+      border:1px solid var(--border);
+      transition: background .15s ease, color .15s ease, transform .08s ease;
     }
-    .nav a:hover{ color:var(--linkHover); text-decoration:none; }
+    .nav a:hover{
+      background:var(--accentSoft);
+      color:var(--link);
+      text-decoration:none;
+      transform: translateY(-1px);
+    }
 
     main{ min-width:0; } /* prevent overflow */
 
+    /* Section cards in content area */
     section{
-      padding:18px 0;
-      border-bottom:1px solid var(--border);
+      background:var(--panel);
+      padding:20px 22px;
+      border:1px solid var(--border);
+      border-radius:16px;
+      margin-bottom:18px;
     }
-    section:last-child{ border-bottom:none; }
 
     h2{
       margin:0 0 10px;
@@ -118,22 +159,33 @@
     ul{ margin:8px 0 0 18px; }
     li{ margin:6px 0; }
 
-    .small{ color:var(--muted); font-size:14px; }
-
     /* Mobile */
     @media (max-width: 860px){
-      .top{ grid-template-columns: 72px 1fr; }
-      .avatar{ width:72px; height:72px; border-radius:12px; }
+      .wrap{ padding:22px 14px 60px; }
+
+      .top{
+        grid-template-columns: 80px 1fr;
+        padding:18px 16px;
+        gap:14px;
+      }
+      .avatar{ width:80px; height:80px; border-radius:14px; }
+      h1{ font-size:28px; }
       .grid{ grid-template-columns: 1fr; }
+
       nav{
         position:static;
-        border-right:none;
-        padding-right:0;
-        border-bottom:1px solid var(--border);
-        padding-bottom:10px;
+        top:auto;
       }
-      .nav{ display:flex; flex-wrap:wrap; gap:10px 14px; }
-      .nav a{ padding:6px 0; }
+      .nav{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap:10px;
+      }
+      .nav a{
+        margin-bottom:0;
+        text-align:center;
+        padding:10px 10px;
+      }
     }
   </style>
 </head>
@@ -142,13 +194,17 @@
   <div class="wrap">
 
     <header class="top">
-      <!-- Put your photo at: assets/profile.jpg -->
-      <img class="avatar" src="assets/p.jpg" alt="Profile photo"
+      <!-- Put your photo at: assets/kulandaisamy_photo-passport.jpg -->
+      <img class="avatar" src="assets/kulandaisamy_photo-passport.jpg" alt="Profile photo"
            onerror="this.style.display='none';" />
 
       <div>
         <h1>Dr. Kulandaisamy Arulsamy</h1>
-        <div class="title">Postdoctoral Research Fellow, Boston Children’s Hospital / Harvard Medical School</div>
+        <div class="accent-line"></div>
+
+        <div class="title">
+          Postdoctoral Research Fellow, Boston Children’s Hospital / Harvard Medical School
+        </div>
 
         <div class="meta">
           <span><a href="mailto:YOUR_EMAIL@domain.com">YOUR_EMAIL@domain.com</a></span>
@@ -157,7 +213,7 @@
           <span><a target="_blank" rel="noopener" href="https://doi.org/10.5281/zenodo.14726426">Zenodo DOI</a></span>
         </div>
 
-        <div class="small" style="margin-top:8px;">
+        <div class="small" style="margin-top:10px;">
           Vascular biology · Endothelial dysfunction · Single-cell genomics · SCIG/SCIGFun
         </div>
       </div>
@@ -168,11 +224,11 @@
         <div class="navtitle">Navigation</div>
         <div class="nav">
           <a href="#home">Home</a>
-          <a href="#contrib">Contribution to Science</a>
+          <a href="#contrib">Contribution</a>
           <a href="#pubs">Publications</a>
-          <a href="#software">Software & Tools</a>
-          <a href="#awards">Honors & Awards</a>
-          <a href="#talks">Presentations</a>
+          <a href="#software">Software</a>
+          <a href="#awards">Awards</a>
+          <a href="#talks">Talks</a>
         </div>
       </nav>
 
@@ -201,7 +257,10 @@
 
         <section id="pubs">
           <h2>Publications</h2>
-          <p class="small">For the complete list, visit your <a target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=yfatXHcAAAAJ&hl=en">Google Scholar</a>.</p>
+          <p class="small">
+            For the complete list, visit my
+            <a target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=yfatXHcAAAAJ&hl=en">Google Scholar</a>.
+          </p>
           <ul>
             <li><strong>Arulsamy K</strong>, et al. <em>SCIGFun: AI-driven cell-identity gene sets for improved pathway enrichment.</em> (in preparation)</li>
             <li>(Add 5–10 key papers here; I can format them cleanly with DOI/PMID links.)</li>
@@ -230,7 +289,7 @@
           </ul>
         </section>
 
-        <div class="small" style="margin-top:18px;">
+        <div class="small" style="margin-top:18px; text-align:center;">
           © <span id="y"></span> Kulandaisamy Arulsamy · Hosted on GitHub Pages
         </div>
       </main>
