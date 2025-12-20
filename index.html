@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Kulandaisamy Arulsamy</title>
+<meta name="description" content="Academic homepage of Dr. Kulandaisamy Arulsamy: research, publications, software, and contact.">
+
+<style>
+:root{
+  --bg: #0b1220;
+  --card: #0f1a2e;
+  --card2:#0c1526;
+  --text:#eaf0ff;
+  --muted:#b9c5e6;
+  --line: rgba(255,255,255,.10);
+
+  --a:#22c55e;     /* green */
+  --b:#60a5fa;     /* blue  */
+  --c:#a78bfa;     /* purple */
+  --d:#fb7185;     /* rose */
+  --e:#fbbf24;     /* amber */
+
+  --link:#93c5fd;
+  --shadow: 0 18px 55px rgba(0,0,0,.35);
+  --radius: 18px;
+
+  --max: 980px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+  background:
+    radial-gradient(1200px 700px at 15% 10%, rgba(96,165,250,.18), transparent 55%),
+    radial-gradient(1000px 650px at 85% 20%, rgba(167,139,250,.16), transparent 55%),
+    radial-gradient(900px 600px at 50% 110%, rgba(34,197,94,.12), transparent 60%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.65;
+}
+
+a{color:var(--link); text-decoration:none}
+a:hover{text-decoration:underline}
+
+.container{max-width:var(--max); margin:0 auto; padding:34px 18px 70px}
+
+/* Top banner */
+.hero{
+  border:1px solid var(--line);
+  border-radius: calc(var(--radius) + 6px);
+  padding:22px 20px;
+  background:
+    linear-gradient(135deg, rgba(96,165,250,.18), rgba(167,139,250,.14), rgba(34,197,94,.12)),
+    rgba(15,26,46,.68);
+  box-shadow: var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
+.hero:before{
+  content:"";
+  position:absolute; inset:-2px;
+  background: linear-gradient(90deg, rgba(96,165,250,.35), rgba(167,139,250,.35), rgba(34,197,94,.35));
+  filter: blur(18px);
+  opacity:.35;
+  pointer-events:none;
+}
+.hero-inner{position:relative; display:grid; gap:14px}
+.name{
+  margin:0;
+  font-size:34px;
+  font-weight:900;
+  letter-spacing:-.02em;
+}
+.subtitle{
+  margin:0;
+  color:var(--muted);
+  font-size:15.5px;
+}
+
+/* Badges / buttons */
+.badges{display:flex; flex-wrap:wrap; gap:10px; margin-top:6px}
+.badge{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.06);
+  backdrop-filter: blur(6px);
+  font-size:14px;
+}
+.dot{
+  width:10px; height:10px; border-radius:999px; display:inline-block;
+}
+.dot.a{background:var(--a)}
+.dot.b{background:var(--b)}
+.dot.c{background:var(--c)}
+.dot.d{background:var(--d)}
+.dot.e{background:var(--e)}
+
+/* Tabs */
+.tabs{
+  margin-top:16px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.tab{
+  cursor:pointer;
+  user-select:none;
+  padding:10px 12px;
+  border-radius: 12px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.05);
+  color:var(--muted);
+  font-weight:700;
+  font-size:14px;
+  transition: transform .08s ease, background .2s ease, color .2s ease, border-color .2s ease;
+}
+.tab:hover{transform: translateY(-1px); background: rgba(255,255,255,.08); color:var(--text)}
+.tab.active{
+  color: var(--text);
+  border-color: rgba(147,197,253,.55);
+  background:
+    linear-gradient(135deg, rgba(96,165,250,.22), rgba(167,139,250,.18), rgba(34,197,94,.16));
+}
+
+/* Content */
+section{display:none; padding-top:18px}
+section.active{display:block}
+
+.grid{
+  display:grid;
+  gap:16px;
+}
+@media(min-width:860px){
+  .grid.two{grid-template-columns: 1fr 1fr}
+}
+
+/* Cards */
+.card{
+  border:1px solid var(--line);
+  background: rgba(15,26,46,.72);
+  border-radius: var(--radius);
+  padding:18px;
+  box-shadow: 0 14px 40px rgba(0,0,0,.22);
+}
+.card h2{
+  margin:0 0 10px;
+  font-size:20px;
+  letter-spacing:-.01em;
+}
+.card p{margin:0 0 10px}
+.card p:last-child{margin-bottom:0}
+
+.kicker{
+  display:flex; align-items:center; gap:10px;
+  font-weight:900;
+  letter-spacing:.02em;
+  text-transform:uppercase;
+  font-size:12px;
+  color:var(--muted);
+  margin-bottom:10px;
+}
+.pill{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 10px;
+  border-radius: 12px;
+  border:1px dashed rgba(255,255,255,.18);
+  background: rgba(255,255,255,.04);
+  color:var(--muted);
+  font-size:13.5px;
+}
+
+ul{margin:10px 0 0 18px}
+li{margin:6px 0; color: #d9e3ff}
+.muted{color:var(--muted)}
+hr{
+  border:none; height:1px; background:var(--line);
+  margin:14px 0;
+}
+
+footer{
+  margin-top:26px;
+  text-align:center;
+  color: var(--muted);
+  font-size:13px;
+  opacity:.9;
+}
+
+/* Small accent bars for sections */
+.accent{
+  height:5px; border-radius:999px;
+  background: linear-gradient(90deg, var(--b), var(--c), var(--a));
+  margin: 2px 0 14px;
+  opacity:.95;
+}
+
+/* Print-friendly for CV reviewers */
+@media print{
+  body{background:#fff; color:#111827}
+  .hero, .card{box-shadow:none; background:#fff; border-color:#e5e7eb}
+  a{color:#1e40af}
+  .tab, .tabs{display:none}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1 class="name">Dr. Kulandaisamy Arulsamy</h1>
+        <p class="subtitle">
+          Postdoctoral Research Fellow · Boston Children’s Hospital / Harvard Medical School · Boston, MA, USA
+        </p>
+
+        <div class="badges">
+          <a class="badge" href="mailto:YOUR_EMAIL@domain.com"><span class="dot a"></span>Email</a>
+          <a class="badge" href="https://github.com/kulansam" target="_blank" rel="noopener"><span class="dot b"></span>GitHub</a>
+          <a class="badge" href="https://scholar.google.com/citations?user=yfatXHcAAAAJ&hl=en" target="_blank" rel="noopener"><span class="dot c"></span>Google Scholar</a>
+          <a class="badge" href="https://doi.org/10.5281/zenodo.14726426" target="_blank" rel="noopener"><span class="dot e"></span>Zenodo DOI</a>
+          <a class="badge" href="https://kaifuchenlab.github.io/" target="_blank" rel="noopener"><span class="dot d"></span>Lab</a>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Sections">
+          <div class="tab active" role="tab" tabindex="0" onclick="showTab('about', this)">About</div>
+          <div class="tab" role="tab" tabindex="0" onclick="showTab('research', this)">Research</div>
+          <div class="tab" role="tab" tabindex="0" onclick="showTab('publications', this)">Publications</div>
+          <div class="tab" role="tab" tabindex="0" onclick="showTab('software', this)">Software</div>
+          <div class="tab" role="tab" tabindex="0" onclick="showTab('contact', this)">Contact</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="active">
+    <div class="card">
+      <div class="kicker"><span class="dot b"></span>About</div>
+      <div class="accent"></div>
+      <p>
+        I am a postdoctoral research fellow at <strong>Boston Children’s Hospital / Harvard Medical School</strong>.
+        My work integrates <strong>vascular biology</strong> with <strong>computational genomics</strong>,
+        focusing on endothelial dysfunction and functional interpretation of transcriptomic data.
+      </p>
+      <p>
+        I develop <strong>SCIG / SCIGFun</strong>, an AI-driven framework to identify
+        <em>cell-identity genes (CIGs)</em> and improve pathway enrichment across tissues and disease contexts.
+      </p>
+      <div class="pill">Tip: replace these 2 paragraphs with a 5–7 line “elevator pitch” for grants/CV.</div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="card">
+      <div class="kicker"><span class="dot a"></span>Research</div>
+      <div class="accent"></div>
+      <ul>
+        <li>Endothelial biology, angiogenesis/lymphangiogenesis, and atherosclerosis</li>
+        <li>Single-cell & multi-omics analysis (scRNA-seq, trajectories, RNA velocity)</li>
+        <li>AI-driven gene-set methods and pathway enrichment</li>
+        <li>Translational computational tools for biomedical research</li>
+      </ul>
+      <hr>
+      <p class="muted">
+        Optional: Add 2–3 “Current Projects” bullets (e.g., endothelial CD45 in atherosclerosis; SCIGFun resource).
+      </p>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="card">
+      <div class="kicker"><span class="dot c"></span>Publications</div>
+      <div class="accent"></div>
+      <p><strong>Selected</strong></p>
+      <p>• <strong>Arulsamy K</strong>, et al. <em>SCIGFun: AI-driven cell-identity gene sets for improved pathway enrichment.</em> (in preparation)</p>
+      <p class="muted">
+        Full list: <a href="https://scholar.google.com/citations?user=yfatXHcAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      </p>
+      <hr>
+      <div class="pill">Want me to format your top 10 papers nicely? Paste titles/DOIs here and I’ll clean them.</div>
+    </div>
+  </section>
+
+  <!-- SOFTWARE -->
+  <section id="software">
+    <div class="grid two">
+      <div class="card">
+        <div class="kicker"><span class="dot e"></span>Software</div>
+        <div class="accent"></div>
+        <p><strong>SCIG / SCIGFun</strong></p>
+        <p class="muted">AI-driven identification of cell-identity genes (CIGs) and improved pathway enrichment workflows.</p>
+        <ul>
+          <li>GitHub: <a href="https://github.com/kulansam" target="_blank" rel="noopener">kulansam</a></li>
+          <li>Zenodo DOI: <a href="https://doi.org/10.5281/zenodo.14726426" target="_blank" rel="noopener">10.5281/zenodo.14726426</a></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="kicker"><span class="dot d"></span>Links</div>
+        <div class="accent"></div>
+        <ul>
+          <li>Lab: <a href="https://kaifuchenlab.github.io/" target="_blank" rel="noopener">Kaifu Chen Lab</a></li>
+          <li>Scholar: <a href="https://scholar.google.com/citations?user=yfatXHcAAAAJ&hl=en" target="_blank" rel="noopener">Profile</a></li>
+          <li>GitHub: <a href="https://github.com/kulansam" target="_blank" rel="noopener">Repositories</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="grid two">
+      <div class="card">
+        <div class="kicker"><span class="dot b"></span>Principal Investigator</div>
+        <div class="accent"></div>
+        <p style="margin:0"><strong>Dr. Kaifu Chen</strong></p>
+        <p class="muted" style="margin:6px 0 0">Associate Professor, Department of Cardiology</p>
+        <p class="muted" style="margin:6px 0 0">Boston Children’s Hospital / Harvard Medical School</p>
+        <p style="margin:10px 0 0"><a href="mailto:kaifu.chen@childrens.harvard.edu">kaifu.chen@childrens.harvard.edu</a></p>
+        <p style="margin:6px 0 0"><a href="https://kaifuchenlab.github.io/" target="_blank" rel="noopener">Lab Website</a></p>
+      </div>
+
+      <div class="card">
+        <div class="kicker"><span class="dot a"></span>Contact</div>
+        <div class="accent"></div>
+        <p style="margin:0"><strong>Dr. Kulandaisamy Arulsamy</strong></p>
+        <p class="muted" style="margin:6px 0 0">Postdoctoral Research Fellow</p>
+        <p class="muted" style="margin:6px 0 0">Boston Children’s Hospital / Harvard Medical School</p>
+        <p style="margin:10px 0 0"><a href="mailto:YOUR_EMAIL@domain.com">YOUR_EMAIL@domain.com</a></p>
+        <p class="muted" style="margin-top:10px">Tip: use your institutional email for a more official look.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="y"></span> Kulandaisamy Arulsamy · Hosted on GitHub Pages
+  </footer>
+
+</div>
+
+<script>
+function showTab(id, el){
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+}
+
+// keyboard support: Enter/Space activates tab
+document.querySelectorAll('.tab').forEach(tab=>{
+  tab.addEventListener('keydown', (e)=>{
+    if(e.key === 'Enter' || e.key === ' '){
+      e.preventDefault();
+      tab.click();
+    }
+  });
+});
+
+document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
