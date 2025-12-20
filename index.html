@@ -159,6 +159,27 @@
     ul{ margin:8px 0 0 18px; }
     li{ margin:6px 0; }
 
+    /* Publication list styling */
+    .pub-list{ margin:10px 0 0 0; padding:0; list-style:none; }
+    .pub-list li{
+      padding:10px 0;
+      border-bottom:1px solid var(--border);
+    }
+    .pub-list li:last-child{ border-bottom:none; }
+    .pub-title{ font-weight:700; }
+    .pub-meta{ color:var(--muted); font-size:14px; margin-top:2px; }
+
+    .pill{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:var(--accentSoft);
+      border:1px solid var(--border);
+      color:#1f2937;
+      font-size:13px;
+      margin:6px 8px 0 0;
+    }
+
     /* Mobile */
     @media (max-width: 860px){
       .wrap{ padding:22px 14px 60px; }
@@ -210,11 +231,15 @@
           <span><a href="mailto:KulandaiSamy.Arulsamy@childrens.harvard.edu">KulandaiSamy.Arulsamy@childrens.harvard.edu</a></span>
           <span><a target="_blank" rel="noopener" href="https://github.com/kulansam">github.com/kulansam</a></span>
           <span><a target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=yfatXHcAAAAJ&hl=en">Google Scholar</a></span>
-           <span><a target="_blank" rel="noopener" href="https://www.researchgate.net/profile/Kulandaisamy-Arulsamy">ResearchGate</a></span>
-
+          <span><a target="_blank" rel="noopener" href="https://www.researchgate.net/profile/Kulandaisamy-Arulsamy">ResearchGate</a></span>
         </div>
 
-
+        <div style="margin-top:10px;">
+          <span class="pill">Vascular Biology</span>
+          <span class="pill">Endothelial Cell Identity</span>
+          <span class="pill">Single-cell & Spatial Omics</span>
+          <span class="pill">SCIG / SCIGFun</span>
+        </div>
       </div>
     </header>
 
@@ -235,53 +260,169 @@
         <section id="home">
           <h2>About Me</h2>
           <p>
-            I am a postdoctoral research fellow at <strong>Boston Children’s Hospital / Harvard Medical School</strong>.
+            I am a postdoctoral research fellow at <strong>Boston Children’s Hospital / Harvard Medical School</strong>,
+            mentored by <strong>Dr. Hong Chen</strong> with co-mentorship from <strong>Dr. Kaifu Chen</strong>.
             My research integrates <strong>vascular biology</strong> with <strong>computational genomics</strong>,
-            focusing on endothelial dysfunction and functional interpretation of transcriptomic data.
+            focusing on endothelial cell identity regulation and inflammatory signaling in vascular disease.
           </p>
-        
+          <p>
+            I develop <strong>SCIG / SCIGFun</strong>, an AI-driven framework for identifying <em>cell-identity genes (CIGs)</em>
+            by integrating gene expression with genetic sequence signatures, enabling improved network, trajectory, and pathway analyses in single-cell data.
+          </p>
         </section>
 
         <section id="contrib">
           <h2>Contribution to Science</h2>
-          <ul>
-            <li><strong>AI-driven gene-set methods:</strong> SCIG identifies cell-identity gene sets to improve functional enrichment.</li>
-            <li><strong>Single-cell analysis pipelines:</strong> robust workflows for cell-type profiling, trajectories, and pathway interpretation.</li>
-            <li><strong>Web resources:</strong> SCIGFun to make CIG-based enrichment accessible to the community.</li>
+
+          <h3 style="margin:10px 0 6px; font-size:16px;">1) Early Training in Structural Biology and Disease Mechanisms</h3>
+          <p>
+            In the early stages of my career at the Indian Institute of Technology Madras, I performed systematic analyses of
+            protein–protein and nucleic acid complexes to identify key amino acid residues involved in protein stability and binding.
+            I found that mutations in these residues were frequently linked to vascular diseases and neurological disorders.
+            I also analyzed how disease-causing mutations alter protein structure, stability, and function, which motivated my commitment
+            to understanding disease mechanisms.
+          </p>
+          <ul class="pub-list">
+            <li>
+              <div class="pub-title">Important amino acid residues involved in folding and binding of protein–protein complexes</div>
+              <div class="pub-meta">Kulandaisamy A, Lathi V, ViswaPoorani K, Yugandhar K, Gromiha MM. <em>International Journal of Biological Macromolecules</em> (2017). PMID: 27765571.</div>
+            </li>
+            <li>
+              <div class="pub-title">Alz-Disc: A tool to discriminate disease-causing and neutral mutations in Alzheimer’s disease</div>
+              <div class="pub-meta">Kulandaisamy A, Parvathy Dharshini SA, Gromiha MM. <em>Combinatorial Chemistry & High Throughput Screening</em> (2023). PMID: 35619290.</div>
+            </li>
+            <li>
+              <div class="pub-title">Statistical analysis of disease-causing and neutral mutations in human membrane proteins</div>
+              <div class="pub-meta">Kulandaisamy A, Priya SB, Sakthivel R, Frishman D, Gromiha MM. <em>Proteins</em> (2019). PMID: 30714211.</div>
+            </li>
+            <li>
+              <div class="pub-title">Mutations in transmembrane proteins: diseases, evolutionary insights, prediction and comparison with globular proteins</div>
+              <div class="pub-meta">Zaucha J, Heinzinger M, Kulandaisamy A, et al. <em>Briefings in Bioinformatics</em> (2021). PMID: 32672331.</div>
+            </li>
+          </ul>
+
+          <h3 style="margin:16px 0 6px; font-size:16px;">2) Ph.D. Work: Large-scale Analyses of Disease-causing Mutations</h3>
+          <p>
+            As a Ph.D. graduate student at IIT Madras, I conducted large-scale analyses to elucidate molecular mechanisms of
+            disease-causing mutations in vascular and neurological disorders using genomics and proteomics data. I observed that
+            mutations at arginine residues frequently change to cysteine or glutamine and are associated with vascular disease. I also
+            performed cross-correlation analyses across disease classes and found the strongest correlation between vascular and metabolic disorders.
+            These efforts resulted in multiple first-author publications and conference presentations.
+          </p>
+          <ul class="pub-list">
+            <li>
+              <div class="pub-title">MPTherm-pred: analysis and prediction of thermal stability changes upon mutations in transmembrane proteins</div>
+              <div class="pub-meta">Kulandaisamy A, Zaucha J, Frishman D, Gromiha MM. <em>Journal of Molecular Biology</em> (2021). PMID: 32920050.</div>
+            </li>
+            <li>
+              <div class="pub-title">ProThermDB: thermodynamic database for proteins and mutants revisited after 15 years</div>
+              <div class="pub-meta">Nikam R, Kulandaisamy A* (co-first), Harini K, Sharma D, Gromiha MM. <em>Nucleic Acids Research</em> (2021). PMCID: PMC7778892.</div>
+            </li>
+            <li>
+              <div class="pub-title">Pred-MutHTP: prediction of disease-causing and neutral mutations in human transmembrane proteins</div>
+              <div class="pub-meta">Kulandaisamy A, Zaucha J, Sakthivel R, Frishman D, Gromiha MM. <em>Human Mutation</em> (2020). PMID: 31821684.</div>
+            </li>
+            <li>
+              <div class="pub-title">CarbDisMut: database on neutral and disease-causing mutations in human carbohydrate-binding proteins</div>
+              <div class="pub-meta">Shanmugam NS, Kulandaisamy A, Veluraja K, Gromiha MM. <em>Glycobiology</em> (2024). PMID: 38335248.</div>
+            </li>
+          </ul>
+
+          <h3 style="margin:16px 0 6px; font-size:16px;">3) Postdoctoral Research: Endothelial Cell Identity and Atherosclerosis</h3>
+          <p>
+            As a postdoctoral research fellow at Boston Children’s Hospital / Harvard Medical School, I investigate endothelial cell identity
+            regulation in atherosclerosis and other vascular diseases using transcriptomics, single-cell analysis, and mechanistic studies.
+            I identified molecular mechanisms by which macrophage-specific epsins regulate lipid transport and inflammation, and showed that
+            targeting epsins reduces foam cell formation and improves endothelial function. In parallel, I developed <strong>SCIG</strong>, a machine-learning
+            framework that uncovers cell identity genes by integrating gene expression with genetic sequence codes.
+          </p>
+          <ul class="pub-list">
+            <li>
+              <div class="pub-title">SCIG: Machine learning uncovers cell identity genes in single cells by genetic sequence codes</div>
+              <div class="pub-meta">Kulandaisamy Arulsamy, Xia B, Yu Y, Chen H, Pu WT, Zhang L, Chen K. <em>Nucleic Acids Research</em> (2025). PMCID: PMC12117433.</div>
+            </li>
+            <li>
+              <div class="pub-title">Single-cell analysis reveals a critical role for macrophage epsins in regulating the origin of foam cells in atherosclerosis</div>
+              <div class="pub-meta">Kulandaisamy Arulsamy, Cui K, Gao X, Voronova A, et al.; Chen K, Chen H. <em>ATVB</em> (2025). PMID: 40931837. (Selected for the journal cover, Nov 2025)</div>
+            </li>
+            <li>
+              <div class="pub-title">The chemokine receptor CXCR4 and its ligand CXCL12 (SDF-1) localize to ependymal cilia in brain ventricles</div>
+              <div class="pub-meta">Eisa-Beygi S, Kulandaisamy Arulsamy, Cui K, Wu H, Wang B, Chen K, Chen H. <em>Vascular Pharmacology</em> (2025). PMID: 40934999.</div>
+            </li>
+            <li>
+              <div class="pub-title">Epsin nanotherapy regulates cholesterol transport to fortify atheroma regression</div>
+              <div class="pub-meta">Cui K, Gao X, Wang B, Wu H, Kulandaisamy Arulsamy, et al. <em>Circulation Research</em> (2023). PMCID: PMC9822875.</div>
+            </li>
           </ul>
         </section>
 
         <section id="pubs">
-          <h2>Publications</h2>
+          <h2>Selected Publications</h2>
           <p class="small">
-            For the complete list, visit my
-            <a target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=yfatXHcAAAAJ&hl=en">Google Scholar</a>.
+            Full list:
+            <a target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=yfatXHcAAAAJ&hl=en">Google Scholar</a>
+            ·
+            <a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/myncbi/kulandaisamy.arulsamy.1/bibliography/public/">NIH My Bibliography</a>
           </p>
-          <ul>
-            <li><strong>Arulsamy K</strong>, et al. <em>SCIGFun: AI-driven cell-identity gene sets for improved pathway enrichment.</em> (in preparation)</li>
-            <li>(Add 5–10 key papers here; I can format them cleanly with DOI/PMID links.)</li>
+
+          <ul class="pub-list">
+            <li>
+              <div class="pub-title">Single-Cell Analysis Reveals a Critical Role for Macrophage Epsins in Regulating the Origin of Foam Cells in Atherosclerosis</div>
+              <div class="pub-meta">Kulandaisamy Arulsamy, Cui K, Gao X, Voronova A, et al.; Chen K, Chen H. <em>Arteriosclerosis, Thrombosis, and Vascular Biology</em> (2025). 45(11):e523–e543. PMID: 40931837. (Cover image, Nov 2025)</div>
+            </li>
+            <li>
+              <div class="pub-title">SCIG: Machine learning uncovers cell identity genes in single cells by genetic sequence codes</div>
+              <div class="pub-meta">Kulandaisamy Arulsamy, Xia B, Yu Y, Chen H, Pu WT, Zhang L, Chen K. <em>Nucleic Acids Research</em> (2025). 53(10):gkaf431. PMCID: PMC12117433.</div>
+            </li>
+            <li>
+              <div class="pub-title">Epsin nanotherapy regulates cholesterol transport to fortify atheroma regression</div>
+              <div class="pub-meta">Cui K, Gao X, Wang B, Wu H, Kulandaisamy Arulsamy, et al. <em>Circulation Research</em> (2023). 132(1):e22–e42. PMCID: PMC9822875.</div>
+            </li>
+            <li>
+              <div class="pub-title">Tbx5 maintains atrial identity in postnatal cardiomyocytes by regulating an atrial-specific enhancer network</div>
+              <div class="pub-meta">Sweat ME, Cao Y, Zhang X, Burnicka-Turek O, Perez-Cervantes C, Kulandaisamy Arulsamy, et al. <em>Nature Cardiovascular Research</em> (2023). 2(10):881–898. PMCID: PMC10854392.</div>
+            </li>
           </ul>
         </section>
 
         <section id="software">
           <h2>Software & Tools</h2>
-          <ul>
-            <li><strong>SCIGFun</strong> — web tool for CIG-based enrichment and visualization. (add your repo link)</li>
-            <li><strong>SCIG</strong> — core pipeline / scripts. (add your repo link)</li>
+          <ul class="pub-list">
+            <li>
+              <div class="pub-title">SCIG / SCIGFun</div>
+              <div class="pub-meta">AI-driven identification of cell-identity genes (CIGs) by integrating gene expression and genetic sequence signatures. Enables improved single-cell network, trajectory, and pathway enrichment analyses.</div>
+            </li>
           </ul>
+          <p class="small" style="margin-top:10px;">
+            Code and resources:
+            <a target="_blank" rel="noopener" href="https://github.com/kulansam">GitHub</a>
+            (add direct repo links when ready).
+          </p>
         </section>
 
         <section id="awards">
           <h2>Honors & Awards</h2>
           <ul>
-            <li>(Add fellowships/awards here)</li>
+            <li><strong>11/2024</strong> — Delivered talk at AHA Scientific Sessions 2024</li>
+            <li><strong>11/2024</strong> — 2nd place, poster presentation, CNAHA/ACRE/CAAC Joint Research Symposium</li>
+            <li><strong>02/2024</strong> — Invited talk, BCH Annual Symposium 2024</li>
+            <li><strong>11/2023</strong> — Young Investigator Award, CNAHA/ACRE/CAAC Joint Research Symposium</li>
+            <li><strong>10/2022</strong> — Guest Editor, special issue, <em>Molecules</em> (MDPI)</li>
+            <li><strong>06/2021</strong> — Institute’s Best Thesis Award (IIT Madras, 2021)</li>
+            <li><strong>03/2021</strong> — Best Thesis Award, Department of Biotechnology (Batch of 1979)</li>
+            <li><strong>12/2019</strong> — IBSE Travel Grant, IIT Madras</li>
+            <li><strong>09/2018</strong> — First Prize, poster presentation, 17th International Conference on Bioinformatics (JNU, New Delhi)</li>
           </ul>
+
+          <p class="small" style="margin-top:10px;"><strong>Professional Membership:</strong> American Heart Association (AHA), 2024–present.</p>
         </section>
 
         <section id="talks">
-          <h2>Presentations</h2>
+          <h2>Talks & Presentations</h2>
           <ul>
-            <li>(Add invited talks, posters, conferences here)</li>
+            <li><strong>2024</strong> — Oral/Poster presentations: AHA Scientific Sessions 2024; ATVB Council’s Early Career Reception 2024; Dr. M. Judah Folkman Research Day 2024 (Harvard Medical School/BCH).</li>
+            <li><strong>2024</strong> — Invited presentation: Broad Institute Annual Retreat; BCH Research Symposium; BCH Annual Symposium.</li>
+            <li><strong>2023–2024</strong> — Poster presentations: CAAC/ACRE/CNAHA Joint Research Symposium (Young Investigator Award 2023; 2nd place poster 2024).</li>
           </ul>
         </section>
 
