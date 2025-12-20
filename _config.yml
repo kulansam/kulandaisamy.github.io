@@ -1,0 +1,63 @@
+title: "Kulandaisamy Arulsamy"
+description: "Postdoctoral Research Fellow | Boston Children’s Hospital / Harvard Medical School"
+url: "https://kulansam.github.io"
+baseurl: ""
+
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "default"
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+name: "Dr. Kulandaisamy Arulsamy"
+email: "YOUR_EMAIL@domain.com"
+location: "Boston, MA, USA"
+
+author:
+  name: "Dr. Kulandaisamy Arulsamy"
+  avatar: # e.g. "/assets/images/profile.jpg" (optional)
+  bio: "Postdoctoral Research Fellow at Boston Children’s Hospital / Harvard Medical School. Vascular biology, single-cell genomics, and SCIG/SCIGFun."
+  location: "Boston, MA, USA"
+  links:
+    - label: "Email"
+      icon: "fas fa-envelope"
+      url: "mailto:YOUR_EMAIL@domain.com"
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/kulansam"
+    - label: "Google Scholar"
+      icon: "fas fa-graduation-cap"
+      url: "https://scholar.google.com/citations?user=yfatXHcAAAAJ&hl=en"
+    - label: "ORCID"
+      icon: "fab fa-orcid"
+      url: "https://orcid.org/YOUR_ORCID"
+    - label: "Lab"
+      icon: "fas fa-flask"
+      url: "https://kaifuchenlab.github.io/"
+
+header_pages:
+  - _pages/about.md
+  - _pages/publications.md
+  - _pages/software.md
+  - _pages/contact.md
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+markdown: kramdown
+highlighter: rouge
+
+include:
+  - assets/css/custom.css
